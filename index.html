@@ -1,267 +1,279 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOMENCLATURAS MDP - Cyan Ed.</title>
-    <style>
-        :root {
-            --bg-page: #121212;
-            --bg-card: #1e1e1e;
-            --text-primary: #e0e0e0;
-            --accent: #00e5ff; /* Nuevo color Cian */
-            --accent-glow: rgba(0, 229, 255, 0.4);
-            --border: #333333;
-            --input-bg: #2d2d2d;
-            --input-text: #ffffff;
-            --btn-copy: #00e5ff;
-            --btn-copy-text: #000000;
-            --btn-clear: #5a1a1a;
-            --btn-clear-text: #ffcccc;
+!DOCTYPE html
+html lang=es
+head
+    meta charset=UTF-8
+    meta name=viewport content=width=device-width, initial-scale=1.0
+    titleHUB DE ENLACES MDPtitle
+    style
+        root {
+            --bg-page #121212;
+            --bg-card #1e1e1e;
+            --text-primary #e0e0e0;
+            --accent #00e5ff;  Color Cian 
+            --accent-glow rgba(0, 229, 255, 0.35);
+            --border #333333;
+            --input-bg #2d2d2d;
+            --input-text #ffffff;
+            --btn-copy #00e5ff;
+            --btn-copy-text #000000;
+            --btn-clear #5a1a1a;
+            --btn-clear-text #ffcccc;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-page);
-            color: var(--text-primary);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            margin: 0;
-            min-height: 100vh;
-        }
-
-        /* Navegación superior imitando la imagen */
-        .top-nav {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .nav-btn {
-            background: none;
-            border: 2px solid var(--accent);
-            color: var(--accent);
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .nav-btn.active {
-            background-color: var(--accent);
-            color: #000;
-            box-shadow: 0 0 10px var(--accent-glow);
+            font-family 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color var(--bg-page);
+            color var(--text-primary);
+            display flex;
+            flex-direction column;
+            align-items center;
+            padding 30px 20px;
+            margin 0;
+            min-height 100vh;
+            box-sizing border-box;
         }
 
         .main-container {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 30px;
-            width: 100%;
-            max-width: 600px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+            background-color var(--bg-card);
+            border 1px solid var(--border);
+            border-radius 12px;
+            padding 30px;
+            width 100%;
+            max-width 550px;
+            box-shadow 0 8px 30px rgba(0,0,0,0.5);
         }
 
         h2.title {
-            color: var(--accent);
-            margin-top: 0;
-            text-transform: uppercase;
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 10px;
+            color var(--accent);
+            margin-top 0;
+            text-transform uppercase;
+            font-size 1.4rem;
+            letter-spacing 0.5px;
+            margin-bottom 25px;
+            border-bottom 2px solid var(--accent);
+            padding-bottom 10px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom 20px;
         }
 
         label {
-            display: block;
-            color: var(--accent);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            font-weight: bold;
-            margin-bottom: 8px;
+            display block;
+            color var(--accent);
+            text-transform uppercase;
+            font-size 0.8rem;
+            font-weight bold;
+            margin-bottom 8px;
+            letter-spacing 0.5px;
         }
 
-        select, input[type="text"] {
-            width: 100%;
-            padding: 12px 15px;
-            background-color: var(--input-bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            color: var(--input-text);
-            font-size: 1rem;
-            box-sizing: border-box;
-            outline: none;
-            transition: border-color 0.3s;
+        select, input[type=text] {
+            width 100%;
+            padding 12px 15px;
+            background-color var(--input-bg);
+            border 1px solid var(--border);
+            border-radius 6px;
+            color var(--input-text);
+            font-size 0.95rem;
+            box-sizing border-box;
+            outline none;
+            transition border-color 0.3s, box-shadow 0.3s;
         }
 
-        select:focus, input[type="text"]:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 5px var(--accent-glow);
+        selectfocus, input[type=text]focus {
+            border-color var(--accent);
+            box-shadow 0 0 8px var(--accent-glow);
         }
 
-        /* Caja de Referencia con borde especial */
+         Caja de Link con borde especial 
         .reference-box {
-            border: 2px solid var(--accent);
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
-            background-color: rgba(0, 229, 255, 0.03);
+            border 1px solid var(--accent);
+            border-radius 8px;
+            padding 15px;
+            margin-bottom 20px;
+            background-color rgba(0, 229, 255, 0.02);
         }
 
-        /* Caja de Resultado Final con borde y brillo */
+         Caja de Resultado con borde y resplandor 
         .result-container {
-            border: 2px solid var(--accent);
-            border-radius: 8px;
-            padding: 20px;
-            background-color: rgba(0, 229, 255, 0.05);
-            margin-bottom: 20px;
-            box-shadow: 0 0 15px var(--accent-glow);
-            text-align: center;
+            border 1px solid var(--accent);
+            border-radius 8px;
+            padding 18px;
+            background-color rgba(0, 229, 255, 0.04);
+            margin-bottom 20px;
+            box-shadow 0 0 12px var(--accent-glow);
+            text-align center;
         }
 
         .result-text {
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 1.1rem;
-            word-break: break-all;
-            margin-bottom: 0;
+            color var(--accent);
+            font-weight bold;
+            font-size 1.05rem;
+            word-break break-all;
+            margin 0;
         }
 
-        /* Botones de acción */
+         Botones de acción 
         .action-buttons {
-            display: flex;
-            gap: 15px;
+            display flex;
+            gap 15px;
         }
 
         .btn {
-            flex: 1;
-            padding: 15px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: transform 0.1s, opacity 0.3s;
+            flex 1;
+            padding 14px;
+            border none;
+            border-radius 6px;
+            font-size 0.95rem;
+            font-weight bold;
+            text-transform uppercase;
+            cursor pointer;
+            transition transform 0.1s, opacity 0.2s;
         }
 
-        .btn:active {
-            transform: scale(0.98);
+        .btnactive {
+            transform scale(0.98);
         }
 
         .btn-copy {
-            background-color: var(--btn-copy);
-            color: var(--btn-copy-text);
+            background-color var(--btn-copy);
+            color var(--btn-copy-text);
         }
 
-        .btn-copy:hover {
-            opacity: 0.9;
+        .btn-copyhover {
+            opacity 0.9;
         }
 
         .btn-clear {
-            background-color: var(--btn-clear);
-            color: var(--btn-clear-text);
+            background-color var(--btn-clear);
+            color var(--btn-clear-text);
         }
 
-        .btn-clear:hover {
-            opacity: 0.9;
+        .btn-clearhover {
+            opacity 0.9;
         }
+    style
+head
+body
 
-    </style>
-</head>
-<body>
+    div class=main-container
+        h2 class=titleHUB DE ENLACES MDPh2
 
-    <div class="top-nav">
-        <button class="nav-btn active">Nomenclaturas</button>
-        <button class="nav-btn">Guía de Respuestas</button>
-    </div>
+        !-- APARTADO 1 HERRAMIENTAS --
+        div class=form-group
+            label for=herramientasHERRAMIENTASlabel
+            select id=herramientas onchange=cargarNombres()
+                option value=Seleccione Herramienta...option
+                option value=uso_diarioUso Diariooption
+                option value=lookerLookeroption
+                option value=statuspageStatuspageoption
+            select
+        div
 
-    <div class="main-container">
-        <h2 class="title">NOMENCLATURAS MDP</h2>
+        !-- APARTADO 2 NOMBRE DEL ENLACE --
+        div class=form-group
+            label for=nombreEnlaceNOMBRE DEL ENLACElabel
+            select id=nombreEnlace onchange=actualizarLink()
+                option value=Seleccione Nombre...option
+            select
+        div
 
-        <div class="form-group">
-            <label for="metodo">Método</label>
-            <select id="metodo" onchange="updateNomenclature()">
-                <option value="🏦 Depósito">🏦 Depósito</option>
-                <option value="💸 Retiro">💸 Retiro</option>
-                <option value="💳 Tarjeta">💳 Tarjeta</option>
-            </select>
-        </div>
+        !-- APARTADO 3 LINK (ENTRADA  VISTA) --
+        div class=reference-box
+            div class=form-group style=margin-bottom 0;
+                label for=linkInputLINKlabel
+                input type=text id=linkInput placeholder=Selecciona un enlace o escribe aquí... oninput=actualizarResultadoManual()
+            div
+        div
 
-        <div class="form-group">
-            <label for="proveedor">Proveedor</label>
-            <select id="proveedor" onchange="updateNomenclature()">
-                <option value="Banco de Venezuela">Banco de Venezuela</option>
-                <option value="Banesco">Banesco</option>
-                <option value="Mercantil">Mercantil</option>
-            </select>
-        </div>
+        !-- APARTADO 4 RESULTADO VISUAL Y BOTONES --
+        div class=result-container
+            p id=resultText class=result-textSeleccione las opciones para generar el linkp
+        div
 
-        <div class="form-group">
-            <label for="variante">Variante</label>
-            <select id="variante" onchange="updateNomenclature()">
-                <option value="ACREDITACION POR PAGO NO PROCESADO PROVEEDOR: BDV REF: XXX">ACREDITACION POR PAGO NO PROCESADO PROVEEDOR: BDV REF: XXX</option>
-                <option value="ERROR DE COMISION">ERROR DE COMISION</option>
-            </select>
-        </div>
+        div class=action-buttons
+            button class=btn btn-copy onclick=copiarLink()COPIARbutton
+            button class=btn btn-clear onclick=limpiarCampos()LIMPIARbutton
+        div
+    div
 
-        <div class="reference-box">
-            <div class="form-group" style="margin-bottom: 0;">
-                <label for="referencia">Referencia (REF)</label>
-                <input type="text" id="referencia" value="64021354" placeholder="Introduce la referencia" oninput="updateNomenclature()">
-            </div>
-        </div>
+    script
+         ========================================================
+           BASE DE DATOS DE ENLACES - MODIFICA ESTA SECCIÓN
+           ======================================================== 
+        const baseDeDatos = {
+            uso_diario [
+                { nombre Gmail Corporativo, url httpsmail.google.com },
+                { nombre Google Drive, url httpsdrive.google.com },
+                { nombre Notion Equipo, url httpswww.notion.so }
+            ],
+            looker [
+                { nombre Dashboard de Ventas, url httpslookerstudio.google.comreportingventas },
+                { nombre Reporte de Depósitos MDP, url httpslookerstudio.google.comreportingdepositos }
+            ],
+            statuspage [
+                { nombre Estado General del Sistema, url httpsstatus.tuempresa.com },
+                { nombre Monitor de Proveedores, url httpsstatuspage.io }
+            ]
+        };
 
-        <div class="result-container">
-            <p id="resultText" class="result-text">ACREDITACION POR PAGO NO PROCESADO PROVEEDOR: BDV REF: 64021354</p>
-        </div>
-
-        <div class="action-buttons">
-            <button class="btn btn-copy" onclick="copyNomenclature()">Copiar</button>
-            <button class="btn btn-clear" onclick="clearFields()">Limpiar</button>
-        </div>
-    </div>
-
-    <script>
-        function updateNomenclature() {
-            // Esta lógica es de ejemplo imitando la imagen,
-            // asumiendo que solo se actualiza la REF al final.
-            const referencia = document.getElementById('referencia').value || 'XXX';
+        function cargarNombres() {
+            const herramientaSeleccionada = document.getElementById('herramientas').value;
+            const selectNombre = document.getElementById('nombreEnlace');
             
-            // Texto base imitando la imagen de ejemplo
-            const baseText = "ACREDITACION POR PAGO NO PROCESADO PROVEEDOR: BDV REF: ";
-            
-            document.getElementById('resultText').innerText = baseText + referencia;
+             Limpiar opciones de Nombre del Enlace
+            selectNombre.innerHTML = 'option value=Seleccione Nombre...option';
+            document.getElementById('linkInput').value = '';
+            document.getElementById('resultText').innerText = 'Seleccione las opciones para generar el link';
+
+            if (herramientaSeleccionada && baseDeDatos[herramientaSeleccionada]) {
+                baseDeDatos[herramientaSeleccionada].forEach(item = {
+                    const option = document.createElement('option');
+                    option.value = item.url;
+                    option.textContent = item.nombre;
+                    selectNombre.appendChild(option);
+                });
+            }
         }
 
-        function copyNomenclature() {
-            const textToCopy = document.getElementById('resultText').innerText;
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                // Opcional: una alerta sutil
-                // alert('Copiado al portapapeles');
-            });
+        function actualizarLink() {
+            const urlSeleccionada = document.getElementById('nombreEnlace').value;
+            const inputLink = document.getElementById('linkInput');
+            const resultText = document.getElementById('resultText');
+
+            if (urlSeleccionada) {
+                inputLink.value = urlSeleccionada;
+                resultText.innerText = urlSeleccionada;
+            } else {
+                inputLink.value = '';
+                resultText.innerText = 'Seleccione las opciones para generar el link';
+            }
         }
 
-        function clearFields() {
-            // Restablece los selects al primer elemento
-            document.getElementById('metodo').selectedIndex = 0;
-            document.getElementById('proveedor').selectedIndex = 0;
-            document.getElementById('variante').selectedIndex = 0;
-            // Limpia la referencia
-            document.getElementById('referencia').value = '';
-            // Actualiza el resultado
-            updateNomenclature();
+        function actualizarResultadoManual() {
+            const textoManual = document.getElementById('linkInput').value;
+            document.getElementById('resultText').innerText = textoManual  'Seleccione las opciones para generar el link';
         }
 
-        // Inicializar al cargar
-        updateNomenclature();
-    </script>
-</body>
-</html>
+        function copiarLink() {
+            const textoACopiar = document.getElementById('resultText').innerText;
+            if (textoACopiar && textoACopiar !== 'Seleccione las opciones para generar el link') {
+                navigator.clipboard.writeText(textoACopiar).then(() = {
+                    const btn = document.querySelector('.btn-copy');
+                    const originalText = btn.innerText;
+                    btn.innerText = '¡COPIADO!';
+                    setTimeout(() = { btn.innerText = originalText; }, 1500);
+                });
+            }
+        }
+
+        function limpiarCampos() {
+            document.getElementById('herramientas').selectedIndex = 0;
+            document.getElementById('nombreEnlace').innerHTML = 'option value=Seleccione Nombre...option';
+            document.getElementById('linkInput').value = '';
+            document.getElementById('resultText').innerText = 'Seleccione las opciones para generar el link';
+        }
+    script
+body
+html
